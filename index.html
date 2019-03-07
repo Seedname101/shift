@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+
+<html> 
+ <head>
+    <title>Template for Websites</title> 
+</head>
+ <body>
+    <p align="center"> 
+      <canvas id="mycanvas"></canvas> 
+    </p>
+ </body>
+
+ <script src="https://cdn.jsdelivr.net/processing.js/1.4.8/processing.min.js"></script> 
+ 
+ <script>
+    var sketchProc = function(processingInstance) {
+     with (processingInstance) {
+        size(600, 400); 
+        frameRate(60);
+  //Lower the framerate to make it slower
+frameRate(60);
+var scene = 0;
+var x1 = width-width;
+var x2 = width;
+var x3 = width/2-10/2;
+var x4 = width;
+var x5 = width;
+var x6 = width;
+var x7 = width;
+var x8 = width;
+var y2 = height/2-10;
+var y3 = height/2+10;
+var y4 = height/2+10;
+var y5 = height/2-10;
+var y6 = height/2-10;
+var t = 0;
+var y = 0;
+var a = 30;
+var t1 = 0;
+angleMode = "radians";
+var startPoint = 0;
+var angleVelocity = 0.40;
+var amplitude = a;
+var y1 = height;
+var f = createFont("comic sans ms");
+draw = function() {
+     if(scene === 0){
+        background(65,105,225);
+         fill(255, 255, 255);
+         t += 0.015;
+         if(t > 0){
+             y+=1.5;
+             textFont(f, 40);
+            text("Doppler Shifts", width/2-140, y); 
+           if(y >= height/2){
+               y = height/2;
+           }
+         }
+         if(y >= height/2){
+             y1 -= 1.5;
+             textFont(f, 15);
+            text("By Julian Dominguez", width/2-71, y1);
+            if(y1 <= height/2+40){
+                y1 = height/2+40;
+                rect(width/2-120/2, height/2+60, 120, 40, 5);
+                fill(0, 0, 0);
+                textFont(f, 30);
+                text("Start", width/2-78/2, height/2+90);
+            }
+         }
+     }
+     if(scene === 1){
+         t += 0.015;
+         background(65,105,225);
+noFill();
+rect(width-width, 10,width, 80);
+fill(255, 0, 0);
+rect(width-80, 10, 80, 80);
+fill(255, 128, 0);
+rect(width-130, 10, 50, 80);
+fill(255, 255, 0);
+rect(width-180, 10, 50, 80);
+fill(0, 255, 0);
+rect(width/2-30, 10, 150, 80);
+fill(0, 0, 255);
+rect(width/2+-100-110, 10, 180, 80);
+fill(128, 0, 128);
+rect(width-width, 10, 90, 80);
+fill(0, 0, 0);
+rect(x3, 10, 10, 80);
+rect(x3-200, 10, 10, 80);
+rect(x3+200, 10, 10, 80);
+if(t > 0){
+    x4 -= 5;
+        x2 -= 1;
+        x3 -= 0.15;
+        fill(255, 255, 255);
+        textFont(f, 15);
+        text(" Imagine these gray blocks are the earth and a galaxy. As the galaxy (on the right) \nmoves toward the earth (on the left), the wave's frequency increases and the \nwavelength decreases. Also, the color of the wavelength slowly turns blue.", x4, y2);
+        if(x4 <= width-width+5){
+            x4 = width-width+5;
+        }
+}
+if(t > 8){
+    y2 -= 1;
+    x5 -= 5;
+    if(y2 <= height/2-90){
+        y2 = height/2-90;
+    }
+if(x5 <= width-width+5){
+    x5 = width-width+5;
+}
+    text("Now, the galaxy is going away from the earth. The wavelength gets longer and the \nfrequency gets shorter. The color of the wave gets closer and closer to red.", x5, y3);
+    x2 += 2;
+    x3 += 0.4;
+    if(x2 >= width){
+        x2 = width;
+        x3 = 350;
+        x4 = 1000;
+        y3 -= 1;
+        x6 -= 5;
+        text(" The reason I believe this occurs is because the wavelength. Ultraviolet (UV) \nradiation has a much shorter wavelength than Infared (IR) radiation. ", x6, y4);
+    }
+    if(x6 <= width-width+10){
+        x6 = width-width+10;
+        t1 += 0.015;
+    }
+    if(y3 <= height/2-90){
+        y3 = height/2-90;
+    }
+    if(t1 > 3){
+        x5 = 1000;
+        y4 -= 1;
+        x7 -= 5;
+        text(" Based on my knowledge of the doppler effect, I know that the closer an object gets \nto another object that produces some sort of wave, the wavelength between the two \ngets shorter. ", x7, y5);
+        if(y4 <= height/2-90){
+            y4 = height/2-90;
+        }
+        if(x7 <= width-width+5){
+            x7 = width-width+5;
+        }
+    if(t1 > 8){
+        x6 = 1000;
+        y5 -= 1;
+        x8 -= 5;
+        if(x8 <= width-width+5){
+            x8 = width-width+5;
+        }
+        text(" If I combine the doppler effect and the EM Spectrum, I can figure out that \nViolet/Blue has a shorter wavelength, and Orange/Red has a longer wavelength, thus\n creating red and blue shifts.", x8 , height/2-10);
+        if(y5 <= height/2-90){
+            y5 = height/2-90;
+        }
+    }
+    }
+    if(t1 > 10){
+        x8 = 1000;
+        x7 = 1000;
+    }
+}
+
+ fill(200, 200, 200);
+ rect(x1+3, height/2+40, 15, 115, 2);
+ rect(x2-16, height/2+40, 15, 115, 2);
+startPoint += 0.1;
+var angle = startPoint;
+for (var x = x1+23; x <= width; x += x2/40) {
+    var y = amplitude * sin(angle);
+    stroke(0);
+    fill(x2/2, 0, x2-(x-100));
+    ellipse(x, y+height/2+100, 9, 9);
+    angle += angleVelocity;
+  }
+  
+}
+};
+mouseClicked = function(){
+if(mouseX >= width/2-120/2 && mouseX <= width/2-120/2+120 && mouseY >= height/2+60 && mouseY <= height/2+60+40 && y1 <= height/2+40){
+    scene = 1;
+    t = 0;
+}
+};
+
+    }};
+
+    var canvas = document.getElementById("mycanvas"); 
+
+    var processingInstance = new Processing(canvas, sketchProc); 
+ </script>
+
+</html>
