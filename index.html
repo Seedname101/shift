@@ -2,7 +2,7 @@
 
 <html> 
  <head>
-    <title>Doppler Shifts</title> 
+    <title>EM Doppler Shifts</title> 
 </head>
  <body>
     <p align="center"> 
@@ -17,8 +17,7 @@
      with (processingInstance) {
         size(600, 400); 
         frameRate(60);
-  //Lower the framerate to make it slower
-
+        
 var scene = 0;
 var x1 = width-width;
 var x2 = width;
@@ -152,10 +151,6 @@ if(x5 <= width-width+5){
         }
     }
     }
-    if(t1 > 10){
-        x8 = 1000;
-        x7 = 1000;
-    }
 }
 
  fill(200, 200, 200);
@@ -181,9 +176,7 @@ if(mouseX >= width/2-120/2 && mouseX <= width/2-120/2+120 && mouseY >= height/2+
 };
 
     }};
-
     var canvas = document.getElementById("mycanvas"); 
-
     var processingInstance = new Processing(canvas, sketchProc); 
  </script>
 
